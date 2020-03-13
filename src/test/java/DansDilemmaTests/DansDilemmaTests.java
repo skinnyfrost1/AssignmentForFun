@@ -1,7 +1,6 @@
 package DansDilemmaTests;
 
 import DansDilemma.DansDilemma;
-import Strings.BasicStrings;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,6 +13,17 @@ public class DansDilemmaTests {
     @Before
     public void setup(){
         dansDilemma = new DansDilemma();
+    }    
+    @Test
+    public void dilemmaOfTwoDoubleTest5(){
+        // Given
+        Double input1 = 2d;
+        Double input2 = 2d;
+        // When
+        Integer actual = dansDilemma.dilemmaOfTwo(input1, input2);
+        // Then
+        Integer expected = 3;
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -175,6 +185,21 @@ public class DansDilemmaTests {
         Integer actual = dansDilemma.dilemmaOfN(inputs);
         // Then
         Integer expected = 15632976;
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void dilemmaOfNTest6(){
+        // Given
+        Double[] inputs = new Double[4314];
+        for (int i = 0; i < inputs.length; i++) {
+            inputs[i] = (double) 1;
+        }
+        inputs[5] = 2.0;
+        // When
+        Integer actual = dansDilemma.dilemmaOfN(inputs);
+        // Then
+        Integer expected = 6;
         Assert.assertEquals(expected, actual);
     }
 
